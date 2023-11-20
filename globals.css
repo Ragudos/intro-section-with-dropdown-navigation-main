@@ -1,0 +1,189 @@
+:root {
+    text-rendering: optimizeLegibility;
+    -webkit-text-size-adjust: 100%;
+
+    font-family: "Epilogue", Inter, system-ui, sans-serif;
+    font-synthesis: none;
+    font-size: 18px;
+
+    --background: 0 0% 98%;
+    --foreground: 0 0% 8%;
+    --primary: 0 0% 8%;
+
+    --neutral: 0 0% 41%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    ::before,
+    ::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+    }
+} 
+
+*,
+::before,
+::after {
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+html:focus-within {
+    scroll-behavior: smooth;
+}
+
+:where(ul, ol):not([role=list]) {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+}
+
+main {
+    display: block;
+}
+
+img {
+    max-width: 100%;
+    vertical-align: middle;
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+a,
+button,
+input[type=submit] {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.25rem;
+
+    outline-color: transparent;
+
+    box-shadow:
+        var(--_box-shadow, 0 0 0 0),
+        var(--_ring-offset, 0 0 0 0) var(--_clr-ring-offset),
+        var(--_ring, 0 0 0 0) var(--_clr-ring, transparent)
+    ;
+}
+
+a:focus-visible,
+button:focus-visible,
+input[type=submit]:focus-visible {
+    --_ring: 0px 0px 0px 4px;
+    --_ring-offset: 0px 0px 0px 2px;
+    --_clr-ring: currentColor;
+    --_clr-ring-offset: hsl(var(--background));
+
+    outline-color: currentColor;
+}
+
+.heading,
+h1 {
+    -webkit-hyphens: auto;
+    hyphens: auto;
+    
+    margin-bottom: calc(4px + 0.5ex);
+}
+
+h1 {
+    font-size: clamp(
+        2em,
+        0.025em + 4vw,
+        3em
+    );
+}
+
+h2 {
+    font-size: clamp(
+        1.875em,
+        0.025em + 4vw,
+        2.875em
+    );
+}
+
+h3 {
+    font-size: clamp(
+        1.75em,
+        0.025em + 4vw,
+        2.75em
+    );
+}
+
+h4 {
+    font-size: clamp(
+        1.5em,
+        0.025em + 4vw,
+        2.5em
+    );
+}
+
+h5 {
+    font-size: clamp(
+        1.25em,
+        0.025em + 4vw,
+        2.25em
+    );
+}
+
+h6 {
+    font-size: clamp(
+        1.175em,
+        0.025em + 4vw,
+        2.175em
+    );
+}
+
+section,
+.container {
+    --_padding-inline: var(--padding-inline, 1fr);
+
+    display: grid;
+    grid-template-columns:
+        [full-width-start]
+        minmax(var(--_padding-inline), 1fr)
+        [contained-start]
+        min(100% - calc(var(--_padding-inline) * 2), var(--max-content-width, 1000px))
+        [contained-end]
+        minmax(var(--_padding-inline), 1fr)
+        [full-width-end]
+    ;
+}
+
+section > .full-width,
+.container > .full-width {
+    grid-column: full-width;
+}
+
+section > .contained,
+.container > .contained {
+    grid-column: contained;
+}
+
+[hidden] {
+    display: none;
+}

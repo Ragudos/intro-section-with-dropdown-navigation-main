@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <title>Frontend Mentor | Intro section with dropdown navigation</title>
+
+  <link rel="preload" as="style" href="./globals.css">
+  <link rel="preload" as="style" href="./styles.css">
+  <link rel="stylesheet" href="./globals.css">
+  <link rel="stylesheet" href="./styles.css">
+  <style>
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
+  </style>
+
+  <link rel="preload" as="script" href="./app.js">
+  <script src="./app.js" defer></script>
+</head>
+
+<body>
+  <header>
+    <a href="/" title="Home">
+      <img src="./images/logo.svg" alt="Logo" width="84" height="27" />
+    </a>
+    <button hidden type="button" aria-label="Open mobile navigation menu" aria-expanded="false"
+      aria-controls="group-navigation-header" data-mobile-navigation-btn>
+      <img src="./images/icon-menu.svg" alt=" " width="32" height="18" />
+    </button>
+
+    <div id="group-navigation-header" class="group-nav">
+      <button hidden aria-label="Close mobile navigation menu" aria-expanded="false"
+        aria-controls="group-navigation-header" type="button" class="icon" data-mobile-navigation-btn>
+        <img src="./images/icon-close-menu.svg" alt=" " width="26" height="26" />
+      </button>
+      <nav>
+        <ul>
+          <li>
+            <button class="link" type="button" aria-expanded="false" aria-controls="features-dropdown" data-dropdown>
+              Features
+              <img src="./images/icon-arrow-down.svg" alt=" " width="10" height="6" />
+            </button>
+            <div aria-expanded="false" id="features-dropdown" class="dropdown">
+              <div class="dropdown-wrapper">
+                <ul>
+                  <li>
+                    <a href="#">
+                      <img src="./images/icon-todo.svg" alt=" " width="14" height="16" />
+                      Todo List
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <img src="./images/icon-calendar.svg" alt=" " width="16" height="16" />
+                      Calendar
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <img src="./images/icon-reminders.svg" alt=" " width="13" height="17" />
+                      Reminders
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <img src="./images/icon-planning.svg" alt=" " width="16" height="16" />
+                      Reminders
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </li>
+          <li>
+            <button class="link" type="button" aria-expanded="false" aria-controls="company-dropdown" data-dropdown>
+              Features
+              <img src="./images/icon-arrow-down.svg" alt=" " width="10" height="6" />
+            </button>
+            <div aria-expanded="false" id="company-dropdown" class="dropdown">
+              <div class="dropdown-wrapper">
+                <ul>
+                  <li>
+                    <a href="#">
+                      History
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      Our Team
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      Blog
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </li>
+          <li>
+            <a href="#">
+              Careers
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              About
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <div>
+        <button type="button" class="link">Login</button>
+        <button type="button" class="outline">Register</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <div class="contained main-container">
+        <div class="info-container">
+          <h1>Make <br /> remote work</h1>
+          <p>Get your team in sync, no matter your location. Streamline processes, create team rituals, and watch
+            productivity soar.</p>
+          <button type="button" class="primary">Learn more</button>
+
+          <ul aria-label="List of our clients">
+            <li aria-label="databiz">
+              <img src="./images/client-databiz.svg" alt="Databiz logo" width="114" height="20" />
+            </li>
+            <li aria-label="audiophile">
+              <img src="./images/client-audiophile.svg" alt="Audiophile logo" width="73" height="36" />
+            </li>
+            <li aria-label="meet">
+              <img src="./images/client-meet.svg" alt="Meet logo" width="90" height="20" />
+            </li>
+            <li aria-label="maker">
+              <img src="./images/client-maker.svg" alt="Maker logo" width="83" height="24" />
+            </li>
+          </ul>
+        </div>
+
+        <picture>
+          <source media="(min-width: 1024px)" srcset="./images/image-hero-desktop.png">
+          <img src="./images/image-hero-mobile.png" alt=" " sizes="(min-width: 1024px) 960px, 750px" />
+        </picture>
+      </div>
+    </section>
+  </main>
+
+  <footer class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="#">Your Name Here</a>.
+  </footer>
+</body>
+
+</html>
